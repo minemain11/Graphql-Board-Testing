@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 56px 24px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.code {
+  color: var(--color-main);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.title {
+  margin-top: 8px;
+  color: var(--color-black);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+}
+
+.text {
+  margin-bottom: 14px;
+  color: var(--color-gray);
+}

@@ -1,0 +1,99 @@
+.banner {
+  flex-shrink: 0;
+  padding: 4px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.viewport {
+  position: relative;
+  height: 232px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--gradient-banner);
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  color: var(--color-white);
+}
+
+.title {
+  font-size: 50px;
+  font-weight: var(--font-weight-display);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.illustration {
+  display: flex;
+  filter: drop-shadow(0 6px 10px rgba(52, 0, 140, 0.18));
+}
+
+.illustration > svg {
+  width: auto;
+  height: 56px;
+}
+
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: background-color 0.2s ease;
+}
+
+.dot[aria-current="true"] {
+  background-color: var(--color-white);
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 767px) {
+  .viewport {
+    height: 160px;
+  }
+
+  .slide {
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .illustration > svg {
+    height: 36px;
+  }
+
+  .dots {
+    bottom: 12px;
+  }
+}

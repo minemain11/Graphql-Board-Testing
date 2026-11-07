@@ -1,0 +1,52 @@
+.card {
+  flex: 1;
+  padding: 40px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.skeletonHeading {
+  display: block;
+  width: 120px;
+  height: 20px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f1f1f1 25%, #e8e8e8 50%, #f1f1f1 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.notFoundTitle {
+  color: var(--color-black);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+}
+
+.notFoundText {
+  color: var(--color-gray);
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: 28px 20px;
+  }
+}

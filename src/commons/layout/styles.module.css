@@ -1,0 +1,32 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  min-height: calc(100dvh - 60px);
+}
+
+@media (max-width: 767px) {
+  /* 상단 바가 화면 맨 위에 계속 붙어 있도록(sticky) grid 대신 block으로 배치 */
+  .wrapper {
+    display: block;
+    padding: 0 0 24px;
+  }
+
+  .main {
+    gap: 16px;
+    min-height: calc(100dvh - 96px);
+    margin-top: 16px;
+    padding: 0 16px;
+  }
+}

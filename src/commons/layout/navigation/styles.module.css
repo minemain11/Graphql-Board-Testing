@@ -1,0 +1,131 @@
+.sidebar {
+  position: sticky;
+  top: 30px;
+  height: calc(100dvh - 60px);
+  min-height: 300px;
+  padding: 0 20px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 84px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-left: 1px;
+  color: var(--color-black);
+}
+
+.logoIcon {
+  width: 21px;
+  height: 18px;
+  color: var(--color-main);
+}
+
+.logoText {
+  font-size: 16px;
+  font-weight: var(--font-weight-logo);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.nav {
+  padding-top: 20px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  color: var(--color-gray);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  transition: color 0.15s ease;
+}
+
+.menu:hover {
+  color: var(--color-text);
+}
+
+.menuIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.listIcon {
+  width: 15px;
+  height: 12.5px;
+}
+
+.addIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.active,
+.active:hover {
+  color: var(--color-black);
+}
+
+.active .menuIcon {
+  color: var(--color-main);
+}
+
+/* ---------- 모바일: 상단 바 형태 ---------- */
+@media (max-width: 767px) {
+  .sidebar {
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    min-height: 0;
+    padding: 0 16px;
+    border-radius: 0;
+  }
+
+  .header {
+    height: auto;
+    border-bottom: none;
+  }
+
+  .nav {
+    padding-top: 0;
+  }
+
+  .menuList {
+    display: flex;
+    gap: 16px;
+  }
+
+  .menu {
+    gap: 6px;
+    height: 56px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 379px) {
+  .menuLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}

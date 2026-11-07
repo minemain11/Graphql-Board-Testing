@@ -1,0 +1,247 @@
+.form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 40px 40px 70px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  container-type: inline-size;
+}
+
+.heading {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-main);
+  color: var(--color-black);
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* ---------- 한 줄 (라벨 80px + 입력칸) ---------- */
+.row {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  align-items: center;
+}
+
+.rowTop {
+  align-items: start;
+}
+
+.rowPair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.label {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+}
+
+.rowTop .label {
+  padding-top: 10px;
+}
+
+.control {
+  position: relative;
+  min-width: 0;
+}
+
+/* ---------- 입력칸 상태: 기본 / 클릭 / 비활성화 / 완료 ---------- */
+.input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-input);
+  color: var(--color-text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.input:focus {
+  border-color: var(--color-main);
+}
+
+.input:disabled {
+  background-color: var(--color-disabled);
+  color: var(--color-gray);
+  cursor: not-allowed;
+}
+
+.inputError,
+.inputError:focus {
+  border-color: var(--color-error);
+}
+
+.textarea {
+  height: 240px;
+  padding: 10px 12px;
+  line-height: 1.5;
+  resize: none;
+}
+
+.errorText {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 2px;
+  color: var(--color-error);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* ---------- 이미지 칸 ---------- */
+.slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.slot {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.slotEmpty,
+.slotPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-input);
+}
+
+.slotEmpty {
+  background-color: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  color: var(--color-gray);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.slotEmpty:hover {
+  border-color: var(--color-main);
+  color: var(--color-main);
+}
+
+.plusIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.slotPreview {
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+.slotImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uploading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(100, 0, 255, 0.2);
+  border-top-color: var(--color-main);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.removeButton {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: var(--color-text);
+  color: var(--color-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.removeButton:hover {
+  background-color: var(--color-main);
+}
+
+.fileInput {
+  display: none;
+}
+
+.submitError {
+  color: var(--color-error);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ---------- 좁은 화면: 라벨을 입력칸 위로 ---------- */
+@container (max-width: 560px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .rowTop .label {
+    padding-top: 0;
+  }
+
+  .rowPair {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: 28px 20px 40px;
+  }
+
+  .heading {
+    padding-bottom: 16px;
+  }
+
+  .fields {
+    gap: 24px;
+    margin-top: 24px;
+  }
+}
